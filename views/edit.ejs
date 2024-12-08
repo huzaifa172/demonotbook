@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>file name 
+
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+<!-- <% theName = filename.replace(".txt", "")%> -->
+  <div class="bg-white p-5 main-container">
+        <a href="/" class="mt-2 bg-blue-600 px-5 py-2 rounded-md text-white" >back</a>
+      
+        <div class="forms p-10 text-white">
+          <form action="/edittask" method="post">
+            <!-- name edit  -->
+            <input type="text"class="block text-black p-5 w-full rounded-md mt-5 border-2" placeholder="Previous Name"  name="previous" value="<%= filename %>">  
+            <input type="text" name="new" id="" placeholder="New Name" class="w-full text-black p-5 rounded-md my-5 border-2">
+            <!-- details edit  -->
+             <!-- <p class="text-black"><%= theData %></p> -->
+
+            <textarea  name="previousDetails" class="block text-black w-full  bg-white border-2 p-5 rounded-md" id="" placeholder="this is your name"></textarea>
+            <textarea  name="newDetails" class="block w-full text-black  bg-white  border-2 p-5  rounded-md mt-5" id="" placeholder="Write Your Task"></textarea>
+            <input type="submit" value="Update Name" class="mt-2 bg-blue-600 px-5 py-2 rounded-md">
+          </form>
+      </div>
+
+
+      </div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>huzaifa iqbal bhatti</title>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900">
+      
+      
+      <div class="forms p-10 text-white">
+        <form action="./create" method="post">
+          <input type="text"class="block px-5 w-full rounded-md bg-zinc-800" placeholder="Title"  name="title">
+          <textarea  name="details" class="block px-5 w-full rounded-md bg-zinc-800 resize-none mt-2" id="" placeholder="Write Your Task"></textarea>
+          <input type="submit" value="create Task" class="mt-2 bg-blue-600 px-5 py-2 rounded-md">
+      </form>
+    </div>
+    
+    <div class="cards  flex gap-3 flex-wrap p-10">
+      <% var filesConToString = files;%>
+      <% var fil = filesConToString ;%>      
+      
+      <% if(fil.length > 0 ){ %>
+        <% fil.forEach(file => {%>
+          
+          <div class="card w-72 rounded-md bg-zinc-800 px-3 py-4">
+            <h1 class="text-white  text-3xl  tracking-tighter"><%= file.replace('.txt', ' ').replace("-", " ")%></h1>
+            <div class=" text-white w-full flex justify-between items-center mt-3">
+              <a href="/files/<%= file %>" class="text-blue-500 inline-block">Read More.... </a>
+              <a href="/edit/<%= file %>">edit</a>
+            </div>
+          </div>
+
+
+          <% }) %>
+
+          <% } else { %>
+            <h3 class="text-white w-full text-center">NO task </h3>
+
+          <% } %>
+     </div>
+
+  </div>
+</body>
+</html>
